@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2016 by sanBastia (http://jsbin.com/buzubam/17/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+<head>
+<meta name="description" content="[BMI]">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+  <h1>Klik F12 untuk melihat hasilnya !</h1>
+<script id="jsbin-javascript">
+var gender = prompt("Masukan Gender Anda[L/P] : ");
+var beratBadan = prompt("Masukan berat badan anda sekarang : ");
+var tinggiBadan = prompt("Masukan tinggi badan anda sekarang : ");
+var condition = ['Under Weight/Kurus – Sebaiknya mulai menambah berat badan dan mengkonsumsi makanan berkarbohidrat di imbangi dengan olah raga',
+                 'Normal Weight/Normal – Bagus, berat badan anda termasuk kategori ideal',
+                 'Over Weight/Kegemukan – Harus waspada',
+                 'Obesitas – Warning, sebaiknya memulai program menurunan berat badan agar lebih ideal.']
+
+var profile = function(gender,beratBadan,tinggiBadan){
+  
+  this.gender = gender;
+  this.beratBadan = beratBadan;
+  this.tinggiBadan = tinggiBadan * 0.01;
+  this.beratIdeal = beratBadan / Math.pow(this.tinggiBadan,2); 
+
+  
+  this.ideal = function(gender){
+    
+      if(gender === "L" || gender === "l")
+    {
+        if( this.beratIdeal < 17)
+          {
+            console.log(condition[0]);
+          }else if(this.beratIdeal >= 17 && this.beratIdeal <= 23){
+              console.log(condition[1]);
+            }else if (this.beratIdeal >= 23 && this.beratIdeal <= 27 ){
+              
+              console.log(condition[2]);
+               
+            }else{
+              console.log(condition[3]);
+            
+            }
+      } else {
+  
+           if(this.beratIdeal < 18)
+          {
+            console.log(condition[0]);
+          }else if(this.beratIdeal >= 18 && this.beratIdeal <= 25){
+              console.log(condition[1]);
+            }else if (this.beratIdeal >= 25 && this.beratIdeal <= 27 ){
+              console.log(condition[2]);
+              
+            }else{
+              console.log(condition[3]);
+              
+            }
+        }
+    
+  }
+  
+  this.laporan = function(){
+        if(this.gender === "L" || this.gender ==="l")
+            {
+            console.log("GENDER : LAKI LAKI");
+              }
+          else{
+            console.log("GENDER : PEREMPUAN");
+          }
+            console.log("Berat badan sekarang : "+this.beratBadan+"kg");
+            console.log("Tinggi badan sekarang : "+this.tinggiBadan+" m");
+          
+    
+    
+  }
+    
+}
+
+console.log("***********************************");
+console.log("APLIKASI PENGUKUR BERAT BADAN IDEAL");
+console.log("base on BMI calculation");
+console.log("***********************************");
+
+var client = new profile(gender,beratBadan,tinggiBadan);
+
+client.ideal(gender);
+client.laporan(gender, beratBadan, tinggiBadan);
+    
+            
+      
+
+
+
+
+</script>
+</body>
+</html>

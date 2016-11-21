@@ -1,0 +1,32 @@
+#PSEUDOCODE APLIKASI BERAT BADAN IDEAL
+
+BACA dan SIMPAN variable gender
+BACA dan SIMPAN variable beratBadan
+BACA dan SIMPAN variable tinggiBadan
+BACA variable beratIdeal
+
+HITUNG tinggiBadan dikali sama dengan 0.01 dan SIMPAN dalam variable beratIdeal
+HITUNG beratIdeal sama dengan beratBadan dikali dengan tinggiBadan kuadrat
+
+IF gender adalah "l" atau "L"
+	IF beratIdeal lebih kecil dari 17
+		TULISKAN "Under Weight/Kurus"
+	ELSE IF beratIdeal diantara 17 sampai dengan 23
+		TULISKAN "Normal Weight"
+	ELSE IF beratIdeal diantara 23 sampai dengan 27
+		tuliskan "Over Weight"
+	ELSE 
+		tuliskan "OBESITAS"
+ELSE 	
+	IF beratIdeal lebih kecil dari 18
+		TULISKAN "Under Weight/Kurus"
+	ELSE IF beratIdeal diantara 18 sampai dengan 25
+		TULISKAN "Normal Weight"
+	ELSE IF beratIdeal diantara 25 sampai dengan 27
+		tuliskan "Over Weight"
+	ELSE 
+		tuliskan "OBESITAS"
+
+TULISKAN gender
+TULISKAN beratBadan
+TULISKAN tinggiBadan
